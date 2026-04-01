@@ -32,7 +32,5 @@ public class TextBoxFormTests extends BaseTest {
         $("[id=email]").shouldHave(Condition.exactText("Email:"));
         $("[id=output]").$("[id=currentAddress]").shouldHave(Condition.exactText("Current Address :"));
         $("[id=output]").$("[id=permanentAddress]").shouldHave(Condition.exactText("Permananet Address :"));
-
     }
-
 }

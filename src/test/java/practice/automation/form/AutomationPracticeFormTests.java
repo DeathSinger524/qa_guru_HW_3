@@ -30,12 +30,11 @@ public class AutomationPracticeFormTests extends BaseTest {
         $("[id=currentAddress]").setValue("Saint Petersburg");
         $("[id=state]").scrollTo().shouldBe(visible, enabled).click();
         $("[id=stateCity-wrapper]").shouldBe(visible, enabled)
-                        .$$("div").findBy(text("Uttar Pradesh")).click();
+                .$$("div").findBy(text("Uttar Pradesh")).click();
         $("[id=city]").scrollTo().shouldBe(visible, enabled).click();
         $("[id=stateCity-wrapper]").shouldBe(visible, enabled)
                 .$$("div").findBy(text("Lucknow")).click();
         $("[id=submit]").scrollTo().click();
-
 
         $("[id=example-modal-sizes-title-lg]").shouldHave(Condition.exactText("Thanks for submitting the form"));
         $("[id=resultBody]").$("tr:nth-child(1)").shouldHave(Condition.exactText("Student Name John Doe"));
@@ -50,7 +49,16 @@ public class AutomationPracticeFormTests extends BaseTest {
         $("[id=resultBody]").$("tr:nth-child(10)").shouldHave(Condition.exactText("State and City Uttar Pradesh Lucknow"));
         $("[id=closeModal]").click();
         $("[id=closeModal]").shouldNotBe(visible);
+    }
+        @Test
+        public void negativeFillForm() {
+            open(automationPracticeFormUrl);
+            $("[id=fixedban]").$("button[aria-label='Close']").click();
+            $("[id=firstName]").setValue("John");
+            $("[id=lastName]").setValue("Doe");
+            $("[id=userEmail]").setValue("John@doe.ru");
+            $("[id=submit]").scrollTo().click();
 
-        //ToDo дописать негативный тест: не заполнено основное поле, ожидаем ошибку с указанием поля, по факту всегда ссылается на поле номера телефона
+            $("[id=formError]").shouldBe(Condition.exactText("Please fill required fields and enter a valid 10-digit mobile number."));
     }
 }
