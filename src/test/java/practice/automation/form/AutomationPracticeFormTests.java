@@ -36,7 +36,7 @@ public class AutomationPracticeFormTests extends BaseTest {
         $("#stateCity-wrapper").shouldBe(visible, enabled).$$("div").findBy(text(city)).click();
         $("#submit").scrollTo().click();
 
-        $("#example-modal-sizes-title-lg").shouldHave(Condition.exactText("Thanks for submitting the form"));
+        $("#example-modal-sizes-title-lg").shouldHave(Condition.exactText(messageAfterSubmitting));
         $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text(userName));
         $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text(userEmail));
         $(".table-responsive").$(byText("Gender")).parent().shouldHave(text(gender));

@@ -26,4 +26,5 @@ public class TestData {
     public static String city = "Lucknow";
     public static String dateOfBirth = "1999-03-25";
     public static String formErrorMessage = "Please fill required fields and enter a valid 10-digit mobile number.";
+    public static String messageAfterSubmitting = "Thanks for submitting the form";
 }
