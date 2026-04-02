@@ -1,10 +1,16 @@
 package testdata;
 
+import com.codeborne.selenide.Condition;
+
 public class TestData {
     public static String userName = "John Doe";
     public static String userEmail = "JohnDoe@yandex.ru";
     public static String currentAddress = "Vavilovo 16";
     public static String permanentAddress = "Albukerke";
+    public static String emptyName = "Name:";
+    public static String emptyEmail = "Email:";
+    public static String emptyCurrentAddress = "Current Address :";
+    public static String emptyPermanentAddress = "Permananet Address :";
 
     public static String firstName = "John";
     public static String lastName = "Doe";

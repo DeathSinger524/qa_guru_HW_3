@@ -29,9 +29,9 @@ public class TextBoxFormTests extends BaseTest {
         open(textBoxUrl);
         $("#submit").click();
 
-        $("#name").shouldHave(Condition.exactText("Name:"));
-        $("#email").shouldHave(Condition.exactText("Email:"));
-        $("#output").$("#currentAddress").shouldHave(Condition.exactText("Current Address :"));
-        $("#output").$("#permanentAddress").shouldHave(Condition.exactText("Permananet Address :"));
+        $("#name").shouldHave(Condition.exactText(emptyName));
+        $("#email").shouldHave(Condition.exactText(emptyEmail));
+        $("#output").$("#currentAddress").shouldHave(Condition.exactText(emptyCurrentAddress));
+        $("#output").$("#permanentAddress").shouldHave(Condition.exactText(emptyPermanentAddress));
     }
 }
