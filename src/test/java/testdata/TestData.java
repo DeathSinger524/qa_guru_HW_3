@@ -1,7 +1,5 @@
 package testdata;
 
-import com.codeborne.selenide.Condition;
-
 public class TestData {
     public static String userName = "John Doe";
     public static String userEmail = "JohnDoe@yandex.ru";
@@ -27,4 +25,5 @@ public class TestData {
     public static String dateOfBirth = "1999-03-25";
     public static String formErrorMessage = "Please fill required fields and enter a valid 10-digit mobile number.";
     public static String messageAfterSubmitting = "Thanks for submitting the form";
+    public static String dayOFBirth = "25";
 }

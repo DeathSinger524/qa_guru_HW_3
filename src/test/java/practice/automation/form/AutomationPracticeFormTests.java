@@ -6,7 +6,8 @@ import text.box.tests.BaseTest;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 import static testdata.TestData.*;
 
 public class AutomationPracticeFormTests extends BaseTest {
@@ -24,7 +25,7 @@ public class AutomationPracticeFormTests extends BaseTest {
         $("#dateOfBirthInput").click();
         $("select.react-datepicker__month-select").selectOption(month);
         $("select.react-datepicker__year-select").selectOption(year);
-        $("span.react-datepicker__day.react-datepicker__day--025").click();
+        $("span.react-datepicker__day.react-datepicker__day--0" + dayOFBirth).click();
         $("#subjectsInput").setValue(subjectArt).pressEnter().setValue(subjectChemistry).pressEnter();
         $("#hobbiesWrapper").$$("label").findBy(text(hobbies)).click();
         $("#uploadPicture").uploadFromClasspath(imageName);
