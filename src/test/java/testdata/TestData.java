@@ -1,0 +1,23 @@
+package testdata;
+
+public class TestData {
+    public static String userName = "John Doe";
+    public static String userEmail = "JohnDoe@yandex.ru";
+    public static String currentAddress = "Vavilovo 16";
+    public static String permanentAddress = "Albukerke";
+
+    public static String firstName = "John";
+    public static String lastName = "Doe";
+    public static String gender = "Male";
+    public static String userNumber = "9999999999";
+    public static String month = "March";
+    public static String year = "1999";
+    public static String subjectArt = "Arts";
+    public static String subjectChemistry = "Chemistry";
+    public static String hobbies = "Reading";
+    public static String imageName = "img.png";
+    public static String state = "Uttar Pradesh";
+    public static String city = "Lucknow";
+    public static String dateOfBirth = "1999-03-25";
+    public static String formErrorMessage = "Please fill required fields and enter a valid 10-digit mobile number.";
+}

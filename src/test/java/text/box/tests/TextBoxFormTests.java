@@ -4,33 +4,34 @@ import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.*;
+import static testdata.TestData.*;
 
 public class TextBoxFormTests extends BaseTest {
     String textBoxUrl = "/one-page-form/text-box.html";
 
     @Test
-    public void successfulFillForm() {
+    public void successfulFillFormTest() {
         open(textBoxUrl);
-       $("[id=userName]").setValue("John Doe");
-       $("[id=userEmail]").setValue("JohnDoe@yandex.ru");
-       $("[id=currentAddress]").setValue("Vavilovo 16");
-       $("[id=permanentAddress]").setValue("Albukerke");
-       $("[id=submit").click();
+       $("#userName").setValue(userName);
+       $("#userEmail").setValue(userEmail);
+       $("#currentAddress").setValue(currentAddress);
+       $("#permanentAddress").setValue(permanentAddress);
+       $("#submit").click();
 
-       $("[id=name]").shouldHave(Condition.text("John Doe"));
-       $("[id=email]").shouldHave(Condition.text("JohnDoe@yandex.ru"));
-       $("[id=output]").$("[id=currentAddress]").shouldHave(Condition.text("Vavilovo 16"));
-       $("[id=output]").$("[id=permanentAddress]").shouldHave(Condition.text("Albukerke"));
+       $("#name").shouldHave(Condition.text(userName));
+       $("#email").shouldHave(Condition.text(userEmail));
+       $("#output").$("#currentAddress").shouldHave(Condition.text(currentAddress));
+       $("#output").$("#permanentAddress").shouldHave(Condition.text(permanentAddress));
     }
 
     @Test
-    public void negativeFillForm() {
+    public void negativeFillFormTest() {
         open(textBoxUrl);
-        $("[id=submit").click();
+        $("#submit").click();
 
-        $("[id=name]").shouldHave(Condition.exactText("Name:"));
-        $("[id=email]").shouldHave(Condition.exactText("Email:"));
-        $("[id=output]").$("[id=currentAddress]").shouldHave(Condition.exactText("Current Address :"));
-        $("[id=output]").$("[id=permanentAddress]").shouldHave(Condition.exactText("Permananet Address :"));
+        $("#name").shouldHave(Condition.exactText("Name:"));
+        $("#email").shouldHave(Condition.exactText("Email:"));
+        $("#output").$("#currentAddress").shouldHave(Condition.exactText("Current Address :"));
+        $("#output").$("#permanentAddress").shouldHave(Condition.exactText("Permananet Address :"));
     }
 }
