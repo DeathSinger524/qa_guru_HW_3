@@ -11,8 +11,4 @@ public class BaseTest {
         Configuration.screenshots = true;
         Configuration.timeout = 5000;
     }
-
-
-
-
 }

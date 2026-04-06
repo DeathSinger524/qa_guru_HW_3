@@ -75,5 +75,4 @@ public class TextBoxPage extends BaseTest {
         return this;
     }
 
-
 }
