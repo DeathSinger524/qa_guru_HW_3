@@ -3,8 +3,10 @@ package testdata;
 public class TestData {
     public static String userName = "John Doe";
     public static String userEmail = "JohnDoe@yandex.ru";
-    public static String currentAddress = "Vavilovo 16";
-    public static String permanentAddress = "Albukerke";
+    public static String currentAddressInputData = "Vavilovo 16";
+    public static String currentAddressOutputData = "Current Address :Vavilovo 16";
+    public static String permanentAddressInputData = "Albukerke";
+    public static String permanentAddressOutputData = "Permananet Address :Albukerke";
     public static String emptyName = "Name:";
     public static String emptyEmail = "Email:";
     public static String emptyCurrentAddress = "Current Address :";

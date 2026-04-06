@@ -30,7 +30,7 @@ public class AutomationPracticeFormTests extends BaseTest {
         $("#hobbiesWrapper").$$("label").findBy(text(hobbies)).click();
         $("#uploadPicture").uploadFromClasspath(imageName);
         $("#uploadPicture").shouldHave(Condition.value(imageName));
-        $("#currentAddress").setValue(currentAddress);
+        $("#currentAddress").setValue(currentAddressInputData);
         $("#state").scrollTo().shouldBe(visible, enabled).click();
         $("#stateCity-wrapper").shouldBe(visible, enabled).$$("div").findBy(text(state)).click();
         $("#city").scrollTo().shouldBe(visible, enabled).click();
@@ -46,7 +46,7 @@ public class AutomationPracticeFormTests extends BaseTest {
         $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text(subjectArt + ", " + subjectChemistry));
         $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text(hobbies));
         $(".table-responsive").$(byText("Picture")).parent().shouldHave(text(imageName));
-        $(".table-responsive").$(byText("Address")).parent().shouldHave(text(currentAddress));
+        $(".table-responsive").$(byText("Address")).parent().shouldHave(text(currentAddressInputData));
         $(".table-responsive").$(byText("State and City")).parent().shouldHave(text(state + " " + city));
         $("#closeModal").click();
         $("#closeModal").shouldNotBe(visible);
