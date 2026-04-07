@@ -2,13 +2,16 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import pages.components.CalendarComponent;
 import text.box.tests.BaseTest;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class AutomationPracticePage extends BaseTest {
+    CalendarComponent   calendarComponent = new CalendarComponent();
     //Elements
     String automationPracticeUrl = "/one-page-form/automation-practice-form.html";
 
@@ -18,9 +21,7 @@ public class AutomationPracticePage extends BaseTest {
     private final SelenideElement userEmail = $("#userEmail");
     private final SelenideElement genderContainer = $("#genterWrapper");
     private final SelenideElement userNumber = $("#userNumber");
-    private final SelenideElement dateOfBirthInput = $("#dateOfBirthInput");
-    private final SelenideElement datepickerMonth = $("select.react-datepicker__month-select");
-    private final SelenideElement datepickerYear = $("select.react-datepicker__year-select");
+
     private final SelenideElement subjects = $("#subjectsInput");
     private final SelenideElement hobbies = $("#hobbiesWrapper");
     private final SelenideElement uploadPicture = $("#uploadPicture");
@@ -81,25 +82,9 @@ public class AutomationPracticePage extends BaseTest {
         return this;
     }
 
-    public AutomationPracticePage openCalendar(){
-        dateOfBirthInput.click();
-        return this;
-    }
-
-    public AutomationPracticePage chooseMonth(String value){
-        datepickerMonth.selectOption(value);
-        return this;
-    }
-
-    public AutomationPracticePage chooseYear(String value){
-        datepickerYear.selectOption(value);
-        return this;
-    }
-
-    public AutomationPracticePage chooseDay(String value){
-        $$(".react-datepicker__day")
-                .findBy(text(value))
-                .click();
+    public AutomationPracticePage setDateOfBirth(String day, String month, String year){
+        $("#dateOfBirthInput").click();
+        calendarComponent.setDate(day, month, year);
         return this;
     }
 
