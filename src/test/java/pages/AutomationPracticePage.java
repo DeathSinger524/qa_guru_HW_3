@@ -26,9 +26,9 @@ public class AutomationPracticePage extends BaseTest {
     private final SelenideElement hobbies = $("#hobbiesWrapper");
     private final SelenideElement uploadPicture = $("#uploadPicture");
     private final SelenideElement currentAddress = $("#currentAddress");
-    private final SelenideElement state = $("#state");
-    private final SelenideElement stateCityWrapper = $("#stateCity-wrapper");
-    private final SelenideElement city = $("#city");
+    private final SelenideElement stateSelect = $("#state");
+    private final SelenideElement stateCityContainer = $("#stateCity-wrapper");
+    private final SelenideElement citySelect = $("#city");
     private final SelenideElement submitButton = $("#submit");
 
     private final SelenideElement modalTitleWindow = $("#example-modal-sizes-title-lg");
@@ -116,27 +116,22 @@ public class AutomationPracticePage extends BaseTest {
         return this;
     }
 
-    public AutomationPracticePage scrollToState(){
-        state.scrollTo().shouldHave(Condition.visible, enabled).click();
+    public AutomationPracticePage setState(String value){
+        stateSelect.scrollTo().shouldHave(Condition.visible, enabled).click();
+        stateCityContainer.shouldBe(visible, enabled).$(byText(value)).click();
+
         return this;
     }
 
-    public AutomationPracticePage selectState(String value){
-        stateCityWrapper.shouldBe(visible, enabled)
-                .$$("div")
-                .findBy(text(value)).click();
+    public AutomationPracticePage setCity(String value){
+        citySelect.scrollTo().shouldHave(Condition.visible, enabled).click();
+        stateCityContainer.shouldBe(visible, enabled).$(byText(value)).click();
         return this;
     }
 
-    public AutomationPracticePage scrollToCity(){
-        city.scrollTo().shouldHave(Condition.visible, enabled).click();
-        return this;
-    }
-
-    public AutomationPracticePage selectStateCity(String value){
-        stateCityWrapper.shouldBe(visible, enabled)
-                .$$("div")
-                .findBy(text(value)).click();
+    public AutomationPracticePage setStateAndCity(String state, String city){
+        setState(state);
+        setCity(city);
         return this;
     }
 
