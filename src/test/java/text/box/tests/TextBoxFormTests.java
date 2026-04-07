@@ -16,7 +16,7 @@ public class TextBoxFormTests extends BaseTest {
                 .typeCurrentAddress(currentAddressInputData)
                 .typePermanentAddress(permanentAddressInputData)
                 .submitButtonClick()
-                .checkName(userName)
+                .checkName(userName) //ToDo реализовать метод для проверки полей
                 .checkEmail(userEmail)
                 .checkCurrentAddress(currentAddressOutputData)
                 .checkPermanentAddress(permanentAddressOutputData);

@@ -31,19 +31,6 @@ public class AutomationPracticePage extends BaseTest {
     private final SelenideElement citySelect = $("#city");
     private final SelenideElement submitButton = $("#submit");
 
-    private final SelenideElement modalTitleWindow = $("#example-modal-sizes-title-lg");
-    private final SelenideElement studentName = $(".table-responsive").$(byText("Student Name")).parent();
-    private final SelenideElement studentEmail = $(".table-responsive").$(byText("Student Email")).parent();
-    private final SelenideElement studentGender = $(".table-responsive").$(byText("Gender")).parent();
-    private final SelenideElement studentMobile = $(".table-responsive").$(byText("Mobile")).parent();
-    private final SelenideElement studentDateOfBirth = $(".table-responsive").$(byText("Date of Birth")).parent();
-    private final SelenideElement studentSubjects = $(".table-responsive").$(byText("Subjects")).parent();
-    private final SelenideElement studentHobbies= $(".table-responsive").$(byText("Hobbies")).parent();
-    private final SelenideElement studentPicture = $(".table-responsive").$(byText("Picture")).parent();
-    private final SelenideElement studentAddress = $(".table-responsive").$(byText("Address")).parent();
-    private final SelenideElement studentStateAndCity = $(".table-responsive").$(byText("State and City")).parent();
-    private final SelenideElement modalWindow = $("#closeModal");
-
     private final SelenideElement formError = $("#formError");
 
     //Actions
@@ -106,11 +93,6 @@ public class AutomationPracticePage extends BaseTest {
         return this;
     }
 
-    public AutomationPracticePage checkUploadedPictureName(String value){
-        uploadPicture.shouldHave(Condition.value(value));
-        return this;
-    }
-
     public AutomationPracticePage typeCurrentAddress(String value){
         currentAddress.setValue(value);
         return this;
@@ -137,72 +119,6 @@ public class AutomationPracticePage extends BaseTest {
 
     public AutomationPracticePage submitButtonClick(){
         submitButton.scrollTo().click();
-        return this;
-    }
-
-    public AutomationPracticePage checkModalTitleWindow(String value){
-        modalTitleWindow.shouldHave(Condition.exactText(value));
-        return this;
-    }
-
-    public AutomationPracticePage checkStudentName(String value){
-        studentName.shouldHave(text(value));
-        return this;
-
-    }
-
-    public AutomationPracticePage checkStudentEmail(String value){
-        studentEmail.shouldHave(text(value));
-        return this;
-    }
-
-    public AutomationPracticePage checkGender(String value){
-        studentGender.shouldHave(text(value));
-        return this;
-    }
-
-    public AutomationPracticePage checkMobileNumber(String value){
-        studentMobile.shouldHave(text(value));
-        return this;
-    }
-
-    public AutomationPracticePage checkDateOfBirth(String value){
-        studentDateOfBirth.shouldHave(text(value));
-        return this;
-    }
-
-    public AutomationPracticePage checkSubjects(String value1, String value2){
-        studentSubjects.shouldHave(text(value1 + ", " + value2));
-        return this;
-    }
-
-    public AutomationPracticePage checkHobbies(String value){
-        studentHobbies.shouldHave(text(value));
-        return this;
-    }
-
-    public AutomationPracticePage checkPicture(String value){
-        studentPicture.shouldHave(text(value));
-        return this;
-    }
-
-    public AutomationPracticePage checkAddresses(String value){
-        studentAddress.shouldHave(text(value));
-        return this;
-    }
-
-    public AutomationPracticePage checkStateAndCity(String value1, String value2){
-        studentStateAndCity.shouldHave(text(value1 + " " + value2));
-        return this;
-    }
-
-public AutomationPracticePage closeModalWindow(){
-        modalWindow.click();
-        return this;
-    }
-
-public AutomationPracticePage checkModalWindow(){
-        modalWindow.shouldNotBe(visible);
         return this;
     }
 
