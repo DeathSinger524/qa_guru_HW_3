@@ -12,5 +12,4 @@ public void setDate(String day, String month, String year) {
             .findBy(text(day))
             .click();
     }
-
 }

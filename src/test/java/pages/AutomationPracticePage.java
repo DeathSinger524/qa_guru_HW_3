@@ -59,7 +59,7 @@ public class AutomationPracticePage extends BaseTest {
         return this;
     }
 
-    public AutomationPracticePage chooseGender(String value){
+    public AutomationPracticePage selectGender(String value){
         genderContainer.$$("label").findBy(text(value)).click();
         return this;
     }
@@ -75,13 +75,13 @@ public class AutomationPracticePage extends BaseTest {
         return this;
     }
 
-    public AutomationPracticePage chooseSubjects(String value1, String value2){
+    public AutomationPracticePage selectSubjects(String value1, String value2){
         subjects.setValue(value1).pressEnter();
         subjects.setValue(value2).pressEnter();
         return this;
     }
 
-    public AutomationPracticePage chooseHobbies(String value){
+    public AutomationPracticePage selectHobbies(String value){
         hobbies.$$("label")
         .findBy(text(value))
         .click();

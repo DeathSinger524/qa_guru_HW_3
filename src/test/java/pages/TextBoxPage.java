@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
 import text.box.tests.BaseTest;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -18,10 +19,7 @@ public class TextBoxPage extends BaseTest {
     private final SelenideElement userPermanentAddresslInput = $("#permanentAddress");
     private final SelenideElement submitButton = $("#submit");
 
-    private final SelenideElement nameOutput = $("#name");
-    private final SelenideElement emailOutput = $("#email");
-    private final SelenideElement currentAddressOutput = $("#output").$("#currentAddress");
-    private final SelenideElement permanentAddressOutput = $("#output").$("#permanentAddress");
+    private final SelenideElement outputTable = $("#output");
 
     //Actions
     public TextBoxPage openPage() {
@@ -55,23 +53,8 @@ public class TextBoxPage extends BaseTest {
         return this;
     }
 
-    public TextBoxPage checkName(String value){
-        nameOutput.shouldHave(Condition.text(value));
-        return this;
-    }
-
-    public TextBoxPage checkEmail(String value){
-        emailOutput.shouldHave(Condition.text(value));
-        return this;
-    }
-
-    public TextBoxPage checkCurrentAddress(String value){
-        currentAddressOutput.shouldHave(Condition.exactText(value));
-        return this;
-    }
-
-    public TextBoxPage checkPermanentAddress(String value){
-        permanentAddressOutput.shouldHave(Condition.exactText(value));
+    public TextBoxPage checkField(String key, String value) {
+        outputTable.$(By.id(key)).shouldHave(Condition.text(value));
         return this;
     }
 

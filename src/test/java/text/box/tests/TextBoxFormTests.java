@@ -16,19 +16,19 @@ public class TextBoxFormTests extends BaseTest {
                 .typeCurrentAddress(currentAddressInputData)
                 .typePermanentAddress(permanentAddressInputData)
                 .submitButtonClick()
-                .checkName(userName) //ToDo реализовать метод для проверки полей
-                .checkEmail(userEmail)
-                .checkCurrentAddress(currentAddressOutputData)
-                .checkPermanentAddress(permanentAddressOutputData);
+                .checkField("name", userName)
+                .checkField("email", userEmail)
+                .checkField("currentAddress", currentAddressOutputData)
+                .checkField("permanentAddress", permanentAddressOutputData);
     }
 
     @Test
     public void negativeFillFormTest() {
         textBoxPage.openPage()
                 .submitButtonClick()
-                .checkName(emptyName)
-                .checkEmail(emptyEmail)
-                .checkCurrentAddress(emptyCurrentAddress)
-                .checkPermanentAddress(emptyPermanentAddress);
+                .checkField("name", emptyName)
+                .checkField("email", emptyEmail)
+                .checkField("currentAddress", emptyCurrentAddress)
+                .checkField("permanentAddress", emptyPermanentAddress);
     }
 }
