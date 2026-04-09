@@ -1,12 +1,17 @@
 package testdata;
 
+import com.github.javafaker.Faker;
+
 public class TestData {
-    public static String userName = "John Doe";
-    public static String userEmail = "JohnDoe@yandex.ru";
-    public static String currentAddressInputData = "Vavilovo 16";
-    public static String currentAddressOutputData = "Current Address :Vavilovo 16";
-    public static String permanentAddressInputData = "Albukerke";
-    public static String permanentAddressOutputData = "Permananet Address :Albukerke";
+    Faker faker = new Faker();
+
+    public String userName = faker.name().nameWithMiddle();
+    public  String userEmail = faker.internet().emailAddress();
+    public  String currentAddressInputData = faker.address().fullAddress();
+    public  String permanentAddressInputData = faker.address().fullAddress();
+    public  String currentAddressOutputData = "Current Address :" + currentAddressInputData;
+    public  String permanentAddressOutputData = "Permananet Address :" + permanentAddressInputData;
+
     public static String emptyName = "Name:";
     public static String emptyEmail = "Email:";
     public static String emptyCurrentAddress = "Current Address :";
