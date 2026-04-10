@@ -3,19 +3,19 @@ package pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
-import text.box.tests.BaseTest;
+import tests.BaseTest;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 
-public class TextBoxPage extends BaseTest {
+public class TextBoxPage {
     //Elements
     String textBoxUrl = "/one-page-form/text-box.html";
 
-    private final SelenideElement userNameInput = $("#userName");
-    private final SelenideElement userEmailInput = $("#userEmail");
-    private final SelenideElement userCurrentAddresslInput = $("#currentAddress");
+    private final SelenideElement userNameInput = $("#userName"),
+        userEmailInput = $("#userEmail"),
+    userCurrentAddresslInput = $("#currentAddress");
     private final SelenideElement userPermanentAddresslInput = $("#permanentAddress");
     private final SelenideElement submitButton = $("#submit");
 

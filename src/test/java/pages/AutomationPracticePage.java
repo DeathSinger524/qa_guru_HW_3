@@ -3,17 +3,16 @@ package pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
-import text.box.tests.BaseTest;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class AutomationPracticePage extends BaseTest {
-    CalendarComponent   calendarComponent = new CalendarComponent();
+public class AutomationPracticePage {
+    CalendarComponent   calendarComponent = new CalendarComponent(); //добавить новый класс в котором будет
     //Elements
-    String automationPracticeUrl = "/one-page-form/automation-practice-form.html";
+    String automationPracticeUrl = "/one-page-form/automation-practice-form.html"; //перенести в base
 
     private final SelenideElement closeCoursesButton = $("#fixedban").$("button[aria-label='Close']");
     private final SelenideElement firstName = $("#firstName");
