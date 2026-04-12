@@ -10,9 +10,9 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class AutomationPracticePage {
-    CalendarComponent   calendarComponent = new CalendarComponent(); //добавить новый класс в котором будет
+    CalendarComponent   calendarComponent = new CalendarComponent();
     //Elements
-    String automationPracticeUrl = "/one-page-form/automation-practice-form.html"; //перенести в base
+    String automationPracticeUrl = "/one-page-form/automation-practice-form.html";
 
     private final SelenideElement closeCoursesButton = $("#fixedban").$("button[aria-label='Close']");
     private final SelenideElement firstName = $("#firstName");
@@ -107,12 +107,6 @@ public class AutomationPracticePage {
     public AutomationPracticePage setCity(String value){
         citySelect.scrollTo().shouldHave(Condition.visible, enabled).click();
         stateCityContainer.shouldBe(visible, enabled).$(byText(value)).click();
-        return this;
-    }
-
-    public AutomationPracticePage setStateAndCity(String state, String city){
-        setState(state);
-        setCity(city);
         return this;
     }
 
