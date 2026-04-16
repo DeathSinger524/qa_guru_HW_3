@@ -74,9 +74,8 @@ public class AutomationPracticePage {
         return this;
     }
 
-    public AutomationPracticePage selectSubjects(String value1, String value2){
+    public AutomationPracticePage selectSubjects(String value1){
         subjects.setValue(value1).pressEnter();
-        subjects.setValue(value2).pressEnter();
         return this;
     }
 

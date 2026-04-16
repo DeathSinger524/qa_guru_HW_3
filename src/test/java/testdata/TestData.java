@@ -27,8 +27,7 @@ public class TestData {
     public String userNumber = getRandomPhone();
     public String gender = getRandomGender();
     public String imageName = getRandomImage();
-    public String subjectOne = getRandomSubject();
-    public String subjectTwo = getRandomSubject();
+    public String subject = getRandomSubject();
     public String hobbies = getHobbies();
     public String month = getRandomMonth();
     public String monthNumber = getMonthNumberByName(month);

@@ -48,26 +48,20 @@ public class RandomUtils {
         return getRandomItemFromStringArray(states);
     }
 
-    public static String getRandomCity(String state) {
-
-        if (state.contains("NCR")) {
-            String[] cities = {"Delhi", "Gurgaon", "Noida"};
-            return getRandomItemFromStringArray(cities);
-        }
-        if (state.contains("Uttar Pradesh")) {
-            String[] cities = {"Agra", "Lucknow", "Merrut"};
-            return getRandomItemFromStringArray(cities);
-        }
-        if (state.contains("Haryana")) {
-            String[] cities = {"Karnal", "Panipat"};
-            return getRandomItemFromStringArray(cities);
-        }
-        if (state.contains("Rajasthan")) {
-            String[] cities = {"Jaipur", "Jaiselmer"};
-            return getRandomItemFromStringArray(cities);
-        }
-        return state;
+public static String getRandomCity(String state) {
+    switch (state) {
+        case "NCR":
+            return getRandomItemFromStringArray(new String[]{"Delhi", "Gurgaon", "Noida"});
+        case "Uttar Pradesh":
+            return getRandomItemFromStringArray(new String[]{"Agra", "Lucknow", "Merrut"});
+        case "Haryana":
+            return getRandomItemFromStringArray(new String[]{"Karnal", "Panipat"});
+        case "Rajasthan":
+            return getRandomItemFromStringArray(new String[]{"Jaipur", "Jaiselmer"});
+        default:
+            return state;
     }
+}
 
     public static String getMonthNumberByName(String month) {
         for (Month m : Month.values()) {
